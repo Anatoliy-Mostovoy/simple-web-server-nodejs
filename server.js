@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const axios = require("axios");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express(); //* инициализируем экземпляр проекта
@@ -10,16 +11,19 @@ const BASE_URL = process.env.URL;
 
 app.use(express.json()); //* для парса запроса json и запищи в req.body
 app.use(express.static(path.join(__dirname, "/public")));
+app.use(cors()); //*
 
 app.get("/pokemon", async (req, res) => {
   try {
+    console.log(req.query);
+    const { idPokemon } = req.query;
     const pokemon = await axios(BASE_URL, {
       params: {
-        id: 1,
+        id: idPokemon,
       },
     });
-
-    res.json({ pokemon: pokemon.data.name });
+    const { name, id } = pokemon.data;
+    res.json({ name, id });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
