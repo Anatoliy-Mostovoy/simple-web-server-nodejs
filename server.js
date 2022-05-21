@@ -1,11 +1,12 @@
 const express = require("express");
 const path = require("path");
 const axios = require("axios");
+require("dotenv").config();
 
 const app = express(); //* инициализируем экземпляр проекта
 
 const PORT = process.env.PORT || 8081;
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon/1";
+const BASE_URL = process.env.URL;
 
 app.use(express.json()); //* для парса запроса json и запищи в req.body
 app.use(express.static(path.join(__dirname, "/public")));
