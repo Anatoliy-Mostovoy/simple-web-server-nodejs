@@ -1,0 +1,19 @@
+{
+  "name": "simple-web-server-nodejs",
+  "version": "1.0.0",
+  "description": "Rep for a practice to make simple web server on nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anatoliy-Mostovoy/simple-web-server-nodejs.git"
+  },
+  "author": "Mostovyi Anatolii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anatoliy-Mostovoy/simple-web-server-nodejs/issues"
+  },
+  "homepage": "https://github.com/Anatoliy-Mostovoy/simple-web-server-nodejs#readme"
+}
